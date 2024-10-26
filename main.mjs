@@ -10,4 +10,7 @@ hashMap.set("cars", "fulo");
 //console.log(hashMap.has("cars"));
 //console.log(hashMap.remove("cars"));
 //console.log(hashMap.remove("bikes"));
-console.log(hashMap.length());
+hashMap.set("cars1", "tintan");
+hashMap.clear();
+console.log(hashMap.has("cars"));
+console.log(hashMap.has("cars1"));

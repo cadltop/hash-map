@@ -37,7 +37,7 @@ export default class {
         if (this.has(key)) {
             this.#buckets  = this.#buckets.filter(function(value, index, array) {
                 return array[!index];
-            })
+            });
             this.#entries--;
             return true;
         }
@@ -45,5 +45,9 @@ export default class {
     }
     length() {
         return this.#entries;
+    }
+    clear() {
+        this.#buckets.length = 0;
+        this.#entries = 0;
     }
 }
