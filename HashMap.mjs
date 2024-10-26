@@ -69,4 +69,11 @@ export default class {
         });
         return values;
     }
+    entries() {
+        const entries = [];
+        this.#buckets.forEach((value) => {
+            entries.push(value);
+        });
+        return entries;
+    }
 }

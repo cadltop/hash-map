@@ -16,5 +16,6 @@ hashMap.set("car3", "panchito");
 // console.log(hashMap.remove("cars1"));
 // console.log(hashMap.get("cars"));
 // console.log(hashMap.get("cars1"));
-console.log(hashMap.keys());
-console.log(hashMap.values());
+// console.log(hashMap.keys());
+// console.log(hashMap.values());
+console.log(hashMap.entries());
