@@ -19,6 +19,7 @@ export default class {
 
         const bucketIndex = this.#hash(key);
         this.#buckets[bucketIndex] = value;
+        this.#entries++;
     }
     get(key) {
         const bucketIndex = this.#hash(key);
@@ -37,8 +38,12 @@ export default class {
             this.#buckets  = this.#buckets.filter(function(value, index, array) {
                 return array[!index];
             })
+            this.#entries--;
             return true;
         }
         else return false;
+    }
+    length() {
+        return this.#entries;
     }
 }
