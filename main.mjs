@@ -8,4 +8,6 @@ console.log(hashMap.get("cars"));
 console.log(hashMap.get("bikes"));
 
 console.log(hashMap.has("cars"));
-console.log(hashMap.has("bikes"));
+console.log(hashMap.remove("cars"));
+console.log(hashMap.remove("bikes"));
+console.log(hashMap.has("cars"));

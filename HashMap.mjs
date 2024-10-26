@@ -32,4 +32,13 @@ export default class {
         if (value) return true;
         else return false;
     }
+    remove(key) {
+        if (this.has(key)) {
+            this.#buckets  = this.#buckets.filter(function(value, index, array) {
+                return array[!index];
+            })
+            return true;
+        }
+        else return false;
+    }
 }
