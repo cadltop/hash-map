@@ -1,6 +1,6 @@
 export default class {
-    #buckets = []
-    #capacity = this.#buckets.length;
+    #buckets = [];
+    #capacity = 16;
     #loadFactor = 0.75;
     #entries = 0;
 
@@ -11,7 +11,6 @@ export default class {
         for (let i = 0; i < key.length; i++) {
             hashCode = primeNumber * hashCode + key.charCodeAt(i);
         }
-
         return hashCode % this.#capacity;
     }
     set(key, value) {
@@ -26,5 +25,11 @@ export default class {
         const value = this.#buckets[bucketIndex];
         if (value) return value;
         else return null;
+    }
+    has(key) {
+        const bucketIndex = this.#hash(key);
+        const value = this.#buckets[bucketIndex];
+        if (value) return true;
+        else return false;
     }
 }
