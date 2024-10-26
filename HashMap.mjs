@@ -18,26 +18,31 @@ export default class {
             this.#capacity += 16;
 
         const bucketIndex = this.#hash(key);
-        this.#buckets[bucketIndex] = value;
+        this.#buckets[bucketIndex] = [key, value];
         this.#entries++;
     }
     get(key) {
-        const bucketIndex = this.#hash(key);
-        const value = this.#buckets[bucketIndex];
-        if (value) return value;
-        else return null;
+        if (this.has(key)) {
+            const bucketIndex = this.#hash(key);
+            const value = this.#buckets[bucketIndex][1];
+            return value;
+        } else return null;
     }
     has(key) {
         const bucketIndex = this.#hash(key);
-        const value = this.#buckets[bucketIndex];
-        if (value) return true;
+        const bucket = this.#buckets[bucketIndex];
+        if (bucket) return true;
         else return false;
     }
+    
     remove(key) {
         if (this.has(key)) {
-            this.#buckets  = this.#buckets.filter(function(value, index, array) {
-                return array[!index];
-            });
+            const hash = this.#hash(key);
+
+            this.#buckets.forEach((value, index, array) => {
+                if(index === hash) delete array[index];
+            })
+            
             this.#entries--;
             return true;
         }
