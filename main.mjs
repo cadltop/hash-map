@@ -2,7 +2,7 @@ import HashMap from "./HashMap.mjs";
 
 const hashMap = new HashMap();
 
-hashMap.set("cars", "fulo");
+hashMap.set("car1", "fulo");
 
 //console.log(hashMap.get("cars"));
 ///console.log(hashMap.get("bikes"));
@@ -10,9 +10,11 @@ hashMap.set("cars", "fulo");
 //console.log(hashMap.has("cars"));
 
 //console.log(hashMap.remove("bikes"));
-hashMap.set("cars1", "tintan");
+hashMap.set("car2", "tintan");
 // hashMap.clear();
-
-console.log(hashMap.remove("cars1"));
-console.log(hashMap.get("cars"));
-console.log(hashMap.get("cars1"));
+hashMap.set("car3", "panchito");
+// console.log(hashMap.remove("cars1"));
+// console.log(hashMap.get("cars"));
+// console.log(hashMap.get("cars1"));
+console.log(hashMap.keys());
+console.log(hashMap.values());

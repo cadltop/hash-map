@@ -55,4 +55,18 @@ export default class {
         this.#buckets.length = 0;
         this.#entries = 0;
     }
+    keys() {
+        const keys = [];
+        this.#buckets.forEach((value) => {
+            keys.push(value[0]);
+        });
+        return keys;
+    }
+    values() {
+        const values = [];
+        this.#buckets.forEach((value) => {
+            values.push(value[1]);
+        });
+        return values;
+    }
 }
