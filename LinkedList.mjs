@@ -6,17 +6,27 @@ export default class {
     }
     add(node) {
         let currentNode = this.nodes;
-            if (currentNode.key === node.key) {
-                currentNode.value = node.value;
-            } else {
-                for (let i = 0; i < this.size; i++) {
-                    if (currentNode.nextNode === null) {
-                        currentNode.nextNode = new Node(node.key, node.value);
-                        this.size++;
-                    } else {
-                        currentNode = currentNode.nextNode;
-                    }
+        if (currentNode.key === node.key) {
+            currentNode.value = node.value;
+        } else {
+            for (let i = 0; i < this.size; i++) {
+                if (currentNode.nextNode === null) {
+                    currentNode.nextNode = new Node(node.key, node.value);
+                    this.size++;
+                } else {
+                    currentNode = currentNode.nextNode;
                 }
             }
+        }
+    }
+    get(nodeKey) {
+        let currentNode = this.nodes;
+        for (let i = 0; i < this.size; i++) {
+            if (currentNode.key === nodeKey) {
+                return currentNode;
+            } else {
+                currentNode = currentNode.nextNode;
+            }
+        }
     }
 }
