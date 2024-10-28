@@ -28,5 +28,6 @@ export default class {
                 currentNode = currentNode.nextNode;
             }
         }
+        return null;
     }
 }

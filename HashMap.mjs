@@ -38,9 +38,8 @@ export default class {
         } else return null;
     }
     has(key) {
-        const bucketIndex = this.#hash(key);
-        const bucket = this.#buckets[bucketIndex];
-        if (bucket) return true;
+        const bucket = this.#buckets[this.#hash(key)];
+        if (bucket && bucket.get(key) !== null) return true;
         else return false;
     }
     
