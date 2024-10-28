@@ -2,20 +2,30 @@ import HashMap from "./HashMap.mjs";
 
 const hashMap = new HashMap();
 
-hashMap.set("car1", "fulo");
+hashMap.set('apple', 'red');
+hashMap.set('banana', 'yellow');
+hashMap.set('carrot', 'orange');
+hashMap.set('dog', 'brown');
+hashMap.set('elephant', 'gray');
+hashMap.set('frog', 'green');
+hashMap.set('grape', 'purple');
+hashMap.set('hat', 'black');
+hashMap.set('ice cream', 'white');
+hashMap.set('jacket', 'blue');
+hashMap.set('kite', 'pink');
+hashMap.set('lion', 'golden');
 
-//console.log(hashMap.get("cars"));
-///console.log(hashMap.get("bikes"));
+// console.log(hashMap.get('apple', 'red'));
+// console.log(hashMap.get('banana', 'yellow'));
+// console.log(hashMap.get('carrot', 'orange'));
+// console.log(hashMap.get('dog', 'brown'));
+// console.log(hashMap.get('elephant', 'gray'));
+// console.log(hashMap.get('frog', 'green'));
+// console.log(hashMap.get('grape', 'purple'));
+// console.log(hashMap.get('hat', 'black'));
+// console.log(hashMap.get('ice cream', 'white'));
+// console.log(hashMap.get('jacket', 'blue'));
+// console.log(hashMap.get('kite', 'pink'));
+// console.log(hashMap.get('lion', 'golden'));
 
-//console.log(hashMap.has("cars"));
-
-//console.log(hashMap.remove("bikes"));
-hashMap.set("car2", "tintan");
-// hashMap.clear();
-hashMap.set("car3", "panchito");
-// console.log(hashMap.remove("cars1"));
-// console.log(hashMap.get("cars"));
-// console.log(hashMap.get("cars1"));
-// console.log(hashMap.keys());
-// console.log(hashMap.values());
-console.log(hashMap.entries());
+// console.log(hashMap.length());

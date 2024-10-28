@@ -1,3 +1,5 @@
+import Node from "./Node.mjs";
+import LinkedList from "./LinkedList.mjs";
 export default class {
     #buckets = [];
     #capacity = 16;
@@ -14,10 +16,18 @@ export default class {
         return hashCode;
     }
     set(key, value) {
-        if (this.#entries > (this.#capacity * this.#loadFactor))
-            this.#capacity += 16;
+        // if (this.#entries > (this.#capacity * this.#loadFactor))
+        //     this.#capacity += 16;
         const bucketIndex = this.#hash(key);
-        this.#buckets[bucketIndex] = [key, value];
+        this.#buckets[bucketIndex] = (function(bucket) {
+            const bucket = bucket;
+            if (!bucket) {
+                return new LinkedList(new Node(key, value));
+            } else {
+                bucket.add(new Node(key, value));
+                return bucket;
+            }
+        })(this.#buckets[bucketIndex]);
         this.#entries++;
     }
     get(key) {
