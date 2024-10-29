@@ -47,4 +47,13 @@ export default class {
         }
         this.size--;
     }
+    all() {
+        let currentNode = this.nodes;
+        const nodeArray = [];
+        for (let i = 0; i < this.size; i++) {
+            nodeArray.push(currentNode);
+            currentNode = currentNode.nextNode;
+        }
+        return nodeArray;
+    }
 }

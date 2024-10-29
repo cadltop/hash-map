@@ -49,8 +49,7 @@ export default class {
             bucket.delete(key);
             this.#entries--;
             return true;
-        }
-        else return false;
+        } else return false;
     }
     length() {
         return this.#entries;
@@ -61,22 +60,34 @@ export default class {
     }
     keys() {
         const keys = [];
-        this.#buckets.forEach((value) => {
-            keys.push(value[0]);
+        this.#buckets.forEach((bucket) => {
+            const bucketList = bucket.all();
+            for (let node of bucketList) {
+                keys.push(node.key);
+            }
         });
+        // this.#buckets.forEach((value) => {
+        //     keys.push(value[0]);
+        // });
         return keys;
     }
     values() {
         const values = [];
-        this.#buckets.forEach((value) => {
-            values.push(value[1]);
+        this.#buckets.forEach((bucket) => {
+            const bucketList = bucket.all();
+            for (let node of bucketList) {
+                values.push(node.value);
+            }
         });
         return values;
     }
     entries() {
         const entries = [];
-        this.#buckets.forEach((value) => {
-            entries.push(value);
+        this.#buckets.forEach((bucket) => {
+            const bucketList = bucket.all();
+            for (let node of bucketList) {
+                entries.push([node.key, node.value]);
+            }
         });
         return entries;
     }

@@ -41,15 +41,22 @@ hashMap.set('lion', 'golden');
 // console.log(hashMap.has('kite'));
 // console.log(hashMap.has('lion'));
 
-console.log(hashMap.remove('apple'));
-console.log(hashMap.remove('banana'));
-console.log(hashMap.remove('carrot'));
-console.log(hashMap.remove('dog'));
-console.log(hashMap.remove('elephant'));
-console.log(hashMap.remove('frog'));
-console.log(hashMap.remove('grape'));
-console.log(hashMap.remove('hat'));
-console.log(hashMap.remove('ice cream'));
-console.log(hashMap.remove('jacket'));
-console.log(hashMap.remove('kite'));
-console.log(hashMap.remove('lion'));
+// console.log(hashMap.remove('apple'));
+// console.log(hashMap.remove('banana'));
+// console.log(hashMap.remove('carrot'));
+// console.log(hashMap.remove('dog'));
+// console.log(hashMap.remove('elephant'));
+// console.log(hashMap.remove('frog'));
+// console.log(hashMap.remove('grape'));
+// console.log(hashMap.remove('hat'));
+// console.log(hashMap.remove('ice cream'));
+// console.log(hashMap.remove('jacket'));
+// console.log(hashMap.remove('kite'));
+// console.log(hashMap.remove('lion'));
+
+// console.log(hashMap.length());
+// hashMap.clear()
+
+console.log(hashMap.keys());
+console.log(hashMap.values());
+console.log(hashMap.entries());
