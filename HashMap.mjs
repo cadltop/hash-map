@@ -16,8 +16,14 @@ export default class {
         return hashCode;
     }
     set(key, value) {
-        // if (this.#entries > (this.#capacity * this.#loadFactor))
-        //     this.#capacity += 16;
+        if (this.#entries >= (this.#capacity * this.#loadFactor)) {
+            this.#capacity += 16;
+            const entries = this.entries();
+            this.clear();
+            entries.forEach(entry => {
+                this.set(entry[0], entry[1]);
+            })
+        }
         const bucketIndex = this.#hash(key);
         this.#buckets[bucketIndex] = (function(bucketsElement) {
             const bucket = bucketsElement;

@@ -26,7 +26,7 @@ hashMap.set('lion', 'golden');
 // console.log(hashMap.get('ice cream'));
 // console.log(hashMap.get('jacket'));
 // console.log(hashMap.get('kite'));
-console.log(hashMap.get('lion'));
+// console.log(hashMap.get('lion'));
 
 // console.log(hashMap.has('apple'));
 // console.log(hashMap.has('banana'));
@@ -54,7 +54,7 @@ console.log(hashMap.get('lion'));
 // console.log(hashMap.remove('kite'));
 // console.log(hashMap.remove('lion'));
 
-// console.log(hashMap.length());
+console.log(hashMap.length());
 // hashMap.clear()
 
 // console.log(hashMap.keys());
@@ -64,3 +64,10 @@ console.log(hashMap.get('lion'));
 // hashMap.set('lion', 'king');
 // console.log(hashMap.get('lion'));
 // console.log(hashMap.entries());
+
+hashMap.set('moon', 'silver');
+console.log(hashMap.length());
+console.log(hashMap.entries());
+
+console.log(hashMap.keys());
+console.log(hashMap.values());
