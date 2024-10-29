@@ -6,7 +6,9 @@ export default class {
     }
     add(node) {
         let currentNode = this.nodes;
-        if (currentNode.key === node.key) {
+        if (currentNode === null) {
+            this.nodes = new Node(node.key, node.value);
+        } else if (currentNode.key === node.key) {
             currentNode.value = node.value;
         } else {
             for (let i = 0; i < this.size; i++) {
@@ -29,5 +31,20 @@ export default class {
             }
         }
         return null;
+    }
+    delete(nodeKey) {
+        let currentNode = this.nodes;
+        if (currentNode.key === nodeKey && currentNode.nextNode !== null) {
+            currentNode.key = currentNode.nextNode.key;
+            currentNode.value = currentNode.nextNode.value;
+            currentNode.nextNode = currentNode.nextNode.nextNode;
+        } else {
+            while (currentNode.nextNode !== null) {
+                if (currentNode.nextNode.key === nodeKey) {
+                    currentNode.nextNode = currentNode.nextNode.nextNode;
+                }
+            }
+        }
+        this.size--;
     }
 }

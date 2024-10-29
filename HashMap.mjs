@@ -45,12 +45,8 @@ export default class {
     
     remove(key) {
         if (this.has(key)) {
-            const hash = this.#hash(key);
-
-            this.#buckets.forEach((value, index, array) => {
-                if(index === hash) delete array[index];
-            })
-            
+            const bucket = this.#buckets[this.#hash(key)];
+            bucket.delete(key);
             this.#entries--;
             return true;
         }
