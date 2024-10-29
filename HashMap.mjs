@@ -66,9 +66,6 @@ export default class {
                 keys.push(node.key);
             }
         });
-        // this.#buckets.forEach((value) => {
-        //     keys.push(value[0]);
-        // });
         return keys;
     }
     values() {

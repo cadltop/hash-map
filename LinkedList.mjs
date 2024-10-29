@@ -7,13 +7,14 @@ export default class {
     add(node) {
         let currentNode = this.nodes;
         if (currentNode === null) {
-            this.nodes = new Node(node.key, node.value);
-        } else if (currentNode.key === node.key) {
-            currentNode.value = node.value;
+            this.nodes = node;
+            this.size++;
         } else {
             for (let i = 0; i < this.size; i++) {
-                if (currentNode.nextNode === null) {
-                    currentNode.nextNode = new Node(node.key, node.value);
+                if (currentNode.key === node.key) {
+                    currentNode.value = node.value;
+                } else if (currentNode.nextNode === null) {
+                    currentNode.nextNode = node;
                     this.size++;
                 } else {
                     currentNode = currentNode.nextNode;
